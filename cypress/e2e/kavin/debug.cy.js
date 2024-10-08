@@ -12,7 +12,7 @@ describe('Debug and pause', () => {
         cy.pause();
         cy.get(".contact > :nth-child(2) > div > :nth-child(2)").should('be.visible');
     });
-    it('Should perform debug in orangehrm website', () => {
+    it('Should perform debug in orangehrm', () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         cy.wait(2000);
         cy.get("input[placeholder='Username']").type("Admin");
