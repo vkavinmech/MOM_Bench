@@ -1,0 +1,18 @@
+{
+    "firstname": "kavin",
+    "lastname": "kumar",
+    "tocity": "Chennai",
+    "fromcity": "London",
+    "billingName": "kavinkumar",
+    "phone": "6385667529",
+    "Invalidphone": "abcd",
+    "emailValid": "kavinkumarv1996@gmail.com",
+    "emailInvalid": "kavinkumarv1996com",
+    "houseNo": "266, Ambethkar street",
+    "village": "savandapur",
+    "city": "Gobichettipalayam",
+    "pincode": "638502",
+    "expEmail": "'Invalid billing email address'",
+    "lazypay":"You have exceeded the maximum number of attempts to change your mobile number/card number. Please use another paymode or try again later.",
+     "exp": "is a required field"
+}
