@@ -26,5 +26,5 @@
 
 /// <reference types="cypress" />
 
-// <reference types="cypress-xpath" />
+/// <reference types="cypress-xpath" />
 
