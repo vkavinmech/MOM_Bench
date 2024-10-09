@@ -28,3 +28,23 @@
 
 /// <reference types="cypress-xpath" />
 
+
+Cypress.Commands.add('getIframe',(iframe)=>{
+    return cy.get(iframe)
+    .its('0.contentDocument.body')
+    .should('be.visible')
+    .then(cy.wrap);
+})
+
+// custom command for clicking link using lable(lable means text present in html )
+
+Cypress.Commands.add('clickLink',(label)=> {
+    cy.get("a").contains(label).click();
+})
+
+Cypress.Commands.add('loginapp',(email,password)=> {
+    cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input").type(email);
+    cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input").type(password);
+    cy.get(".oxd-button").click();
+})
+
