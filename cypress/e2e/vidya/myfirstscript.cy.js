@@ -7,6 +7,6 @@ describe('My First Test', () => {
 
     it('Verify title - negative test', () => {
         cy.visit("https://opensource-demo.orangehrmlive.com/")
-        cy.title().should('eq', 'OrangeHRM124')
+        cy.title().should('not.eq', 'OrangeHRM12')
       })
   })

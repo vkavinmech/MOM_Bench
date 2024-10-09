@@ -19,6 +19,8 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+require('cypress-xpath')
+
 Cypress.on('uncaught:exception', (err, runnable) => {
     // Check if the error message is related to the ResizeObserver loop
     if (err.message.includes('ResizeObserver loop completed with undelivered notifications')) {
