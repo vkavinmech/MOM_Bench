@@ -2,9 +2,6 @@
 
 
 
-
-
-
 describe('File uploads ',(()=>{
 
     it('single file upload',()=>{
@@ -28,42 +25,6 @@ describe('File uploads ',(()=>{
 
         
     })
-
-    it('file upload - Drag and Drop ',()=>{
-
-
-        
-    })
-
-    it('Multiple file upload- ',()=>{
-
-
-        
-    })
-
-    it(' file upload- shadow dom ',()=>{
-
-
-        
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }))
