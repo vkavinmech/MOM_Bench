@@ -8,8 +8,10 @@
   "author": "kavin",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "cypress": "^13.14.1",
-    "cypress-iframe": "^1.0.1"
+  "devDependencies": {
+    "cypress": "^13.15.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "xpath": "^0.0.34"
   }
 }
