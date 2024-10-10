@@ -28,6 +28,8 @@
 
 /// <reference types="cypress-xpath" />
 
+import 'cypress-file-upload';
+
 
 Cypress.Commands.add('getIframe',(iframe)=>{
     return cy.get(iframe)
