@@ -19,7 +19,7 @@ describe('Fixures data', () => {
  });  
     it("Book demo page retrieve data from excel", function() {
         cy.visit("https://www.orangehrm.com/en/book-a-free-demo");
-        const excelFilePath ="C:\\Users\\Dell\\Desktop\\Cypress_Test\\cypress\\fixtures\\orange_excel.xlsx";
+        const excelFilePath ="C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\orange_excel.xlsx";
         const sheetName = "Details";
         cy.task("generateJSONFromExcel", { excelFilePath, sheetName }).then(
          (user) => {
@@ -60,7 +60,7 @@ describe('Fixures data', () => {
     it("Contact Sales retrieve data from excel", function() {
         cy.visit("https://www.orangehrm.com/en/book-a-free-demo");
         cy.get("div[class='d-flex web-menu-btn'] li:nth-child(2) a:nth-child(1)").click(); 
-        const excelFilePath ="C:\\Users\\Dell\\Desktop\\Cypress_Test\\cypress\\fixtures\\orange_excel.xlsx";
+        const excelFilePath ="C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\orange_excel.xlsx";
         const sheetName = "Details";
         cy.task("generateJSONFromExcel", { excelFilePath, sheetName }).then(
         (user) => {

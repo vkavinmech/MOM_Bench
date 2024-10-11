@@ -27,7 +27,7 @@ describe('Fixures data', () => {
  });  
  it("Retrieve data from excel", function() {
     cy.visit("http://register.rediff.com/register/register.php?FormName=user_details");
-    const excelFilePath ="C:\\Users\\Dell\\Desktop\\Cypress_Test\\cypress\\fixtures\\rediff_excel.xlsx";
+    const excelFilePath ="C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\rediff_excel.xlsx";
     const sheetName = "Details";
     cy.task("generateJSONFromExcel", { excelFilePath, sheetName }).then(
       (user) => {
