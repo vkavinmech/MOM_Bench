@@ -2,6 +2,7 @@ import 'cypress-iframe'
 describe('Automation Practice Tests', () => {
     beforeEach(() => {
         cy.visit('https://codenboxautomationlab.com/practice/');
+        cy.wait(3000)
     });
 
     it('Radio Button Example', () => {

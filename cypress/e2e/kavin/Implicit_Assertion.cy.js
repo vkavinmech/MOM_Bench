@@ -5,7 +5,7 @@ describe('Validate Implicit Assertion', () => {
     cy.url().should('include','orangehrmlive.com')
     // we can use and keyword instead of should keyword
     .and('contain','orangehrm')
-    .and('eq','https://opensource-demo.orangehrmlive.com/auth/login')
+    .and('eq','https://opensource-demo.orangehrmlive.com/')
     .and('not.contain','Google')
     cy.title().should('include','Orange')
     .and('eq','OrangeHRM')
