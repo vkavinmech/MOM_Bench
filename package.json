@@ -14,5 +14,9 @@
     "cypress-iframe": "^1.0.1",
     "cypress-xpath": "^2.0.1",
     "xpath": "^0.0.34"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "xlsx": "^0.18.5"
   }
 }
