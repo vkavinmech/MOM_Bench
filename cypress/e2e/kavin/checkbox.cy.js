@@ -1,5 +1,5 @@
 describe('Select the Radio Button', () => {
-    it('Should Verify the Radio Button selection', () => {
+    it('Should Verify the Radio Button and checkbox selection', () => {
     cy.visit("https://artoftesting.com/samplesiteforselenium");
     cy.wait(6000);
     // visibility of checkbox
