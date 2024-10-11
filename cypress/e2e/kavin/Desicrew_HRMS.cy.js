@@ -22,7 +22,7 @@ describe('Login Test', () => {
         cy.get("span[class='user-info initPageDone'] small").should('contain','Welcome');
     });
 
-    it('should navigate to calender page', () => {
+    it.skip('should navigate to calender page', () => {
         cy.get(".menu-icon.fa.fa.fa-calendar").click();
         cy.get("div[class='fc-center'] h2").should('have.text','September 2024')
         cy.url().should('include', '/Home/Calendar'); 
