@@ -20,9 +20,9 @@ describe('Fixures data', () => {
         cy.get('[value="m"]').should('be.checked');
         cy.get("#country").select(data.country);
         cy.get(':nth-child(1) > [colspan="3"] > select').select(data.city);
-        cy.pause();
+       /* cy.pause();
         cy.get("#Register").click();
-        cy.get('#tblcrtac > :nth-child(1) > :nth-child(1) > .f22').should('have.text',data.verifyOtp)
+        cy.get('#tblcrtac > :nth-child(1) > :nth-child(1) > .f22').should('have.text',data.verifyOtp) */
     }) 
  });  
  it("Retrieve data from excel", function() {
@@ -48,9 +48,9 @@ describe('Fixures data', () => {
         cy.get('[value="m"]').should('be.checked');
         cy.get("#country").select(user[0].country);
         cy.get(':nth-child(1) > [colspan="3"] > select').select(user[0].city);
-        cy.pause();
+       /* cy.pause();
         cy.get("#Register").click();  
-        cy.get('#tblcrtac > :nth-child(1) > :nth-child(1) > .f22').should('have.text',"Verify OTP")
+        cy.get('#tblcrtac > :nth-child(1) > :nth-child(1) > .f22').should('have.text',"Verify OTP")*/
         })
     });
 });

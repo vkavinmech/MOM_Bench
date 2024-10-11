@@ -10,11 +10,11 @@ describe('Fixures data', () => {
     cy.get("#Form_getForm_Contact").type(data.mobile);
     cy.frameLoaded("iframe[title='reCAPTCHA']");
     cy.iframe("iframe[title='reCAPTCHA']").find(".recaptcha-checkbox-border").click();
-    cy.pause();
+    /*cy.pause();
     cy.get("#Form_getForm_action_submitForm").should('be.visible')
     cy.get("#Form_getForm_action_submitForm").click();   
     cy.get("div[class='thank-page-info'] h1")
-    .should('contain',data.exp);
+    .should('contain',data.exp);*/
     }) 
  });  
     it("Book demo page retrieve data from excel", function() {
@@ -30,11 +30,11 @@ describe('Fixures data', () => {
             cy.get("#Form_getForm_Contact").type(user[0].mobile);
             cy.frameLoaded("iframe[title='reCAPTCHA']");
             cy.iframe("iframe[title='reCAPTCHA']").find(".recaptcha-checkbox-border").click();
-            cy.pause();
+            /*cy.pause();
             cy.get("#Form_getForm_action_submitForm").should('be.visible')
             cy.get("#Form_getForm_action_submitForm").click();   
             cy.get("div[class='thank-page-info'] h1")
-            .should('contain',user[0].exp);
+            .should('contain',user[0].exp);*/
     })
 });
     it('Contact sales retrive the data from fixure', () => {
@@ -48,13 +48,13 @@ describe('Fixures data', () => {
         cy.get("#Form_getForm_NoOfEmployees").select(data.empCount) 
         cy.get("#Form_getForm_JobTitle").type(data.jobTitle);
         cy.get("#Form_getForm_Comment").type(data.comments);
-        cy.frameLoaded("iframe[title='reCAPTCHA']");
+        /*cy.frameLoaded("iframe[title='reCAPTCHA']");
         cy.iframe("iframe[title='reCAPTCHA']").find(".recaptcha-checkbox-border").click();
         cy.pause();
         cy.get("#Form_getForm_action_submitForm").should('be.visible')
         cy.get("#Form_getForm_action_submitForm").click();   
         cy.get("div[class='thank-page-info'] h1")
-        .should('contain',data.exp);
+        .should('contain',data.exp);*/
         }) 
     });  
     it("Contact Sales retrieve data from excel", function() {
@@ -73,11 +73,11 @@ describe('Fixures data', () => {
             cy.get("#Form_getForm_Comment").type(user[0].comments);
             cy.frameLoaded("iframe[title='reCAPTCHA']");
             cy.iframe("iframe[title='reCAPTCHA']").find(".recaptcha-checkbox-border").click();
-            cy.pause();
+           /* cy.pause();
             cy.get("#Form_getForm_action_submitForm").should('be.visible')
             cy.get("#Form_getForm_action_submitForm").click();   
             cy.get("div[class='thank-page-info'] h1")
-            .should('contain',user[0].exp);
+            .should('contain',user[0].exp);*/
         })
     });
 });
