@@ -52,7 +52,7 @@ describe('Login Test', () => {
         cy.url().should('include', '/HelpDesk/RaiseTicket'); 
         cy.get(".label.label-sm.label.arrowed.arrowed-right").should('contain', "Closed");
      });
-     it.only('should navigate to modules page and get holiday details', () => {
+     it('should navigate to modules page and get holiday details', () => {
         cy.get("#sidebar-shortcuts-mini").trigger('mouseover')
         cy.get(".ace-icon.fa.fa-arrow-down").click();
         cy.get("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > a:nth-child(1) > span:nth-child(1)").trigger('mouseover')

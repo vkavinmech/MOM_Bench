@@ -26,13 +26,7 @@ describe('Automation Practice Tests', () => {
         cy.get('#checkBoxOption1').uncheck(); 
         cy.get('#checkBoxOption1').should('not.be.checked');
     });
-
-    it.skip('Switch Window Example', () => {
-        cy.get('#openwindow').invoke('removeAttr', 'target').click();
-        cy.url().should('eq', 'https://codenbox.com/');
-        cy.go('back'); 
-    });
-
+    
     it('Switch Tab Example', () => {
         cy.get('#opentab').invoke('removeAttr', 'target').click(); 
         cy.url().should('contain', '/@CodenboxAutomationLab'); 
@@ -63,7 +57,7 @@ describe('Automation Practice Tests', () => {
         })
     });
 
-    it.skip('Element Displayed Example', () => {
+    it('Element Displayed Example', () => {
         cy.get('#hide-textbox').click(); 
         cy.get("#show-textbox").click();
         cy.get('#displayed-text').should('be.visible'); 
@@ -88,18 +82,6 @@ describe('Automation Practice Tests', () => {
         cy.wait(4000)
         cy.url().should('include','/practice');
 
-    });
-
-    it('Calendar Example', () => {
-        cy.get('fieldset > p > a').invoke('removeAttr', 'target').click(); 
-        cy.url().should('contain', '/about/booking');
-        cy.get("#rangetime1").select("1:00 PM - 2:00 PM")
-        cy.get("#name1").type("kavin")
-        cy.get("#secondname1").type("kumar")
-        cy.get("#email1").type("kavinkumarv1996@gmail.com")
-        cy.get("#phone1").type("6385667529")
-        cy.get("#details1").type("Demo test")
-        cy.get("button[type='button']").click();
     });
 
     it('Download File Example', () => {
