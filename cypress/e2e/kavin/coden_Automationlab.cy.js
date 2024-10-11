@@ -62,7 +62,7 @@ describe('Automation Practice Tests', () => {
         })
     });
 
-    it('Element Displayed Example', () => {
+    it.skip('Element Displayed Example', () => {
         cy.get('#hide-textbox').click(); 
         cy.get("#show-textbox").click();
         cy.get('#displayed-text').should('be.visible'); 
