@@ -47,7 +47,7 @@ describe('Our Groceries Automation', () => {
         cy.get("div[class='user-menu-container'] a:nth-child(3)").click();
     });
 
-    it.only('should add the shopping list', () => {
+    it('should add the shopping list', () => {
         cy.get('.page-header > [href="/sign-in"]').click();
         cy.get("#emailAddress").type("demotesting@gmail.com")
         cy.get('.labelTextFieldForm > button').click();
