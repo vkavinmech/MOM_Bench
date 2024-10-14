@@ -24,7 +24,7 @@ describe('Login Test', () => {
 
     it.skip('should navigate to calender page', () => {
         cy.get(".menu-icon.fa.fa.fa-calendar").click();
-        cy.get("div[class='fc-center'] h2").should('have.text','September 2024')
+        cy.get("div[class='fc-center'] h2").should('have.text','October 2024')
         cy.url().should('include', '/Home/Calendar'); 
     });
     it('should navigate to profile page', () => {
