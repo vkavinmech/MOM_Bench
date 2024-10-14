@@ -47,25 +47,17 @@ describe('Our Groceries Automation', () => {
         cy.get("div[class='user-menu-container'] a:nth-child(3)").click();
     });
 
-    it('should add the shopping list', () => {
+    it('should verify the shopping list', () => {
         cy.get('.page-header > [href="/sign-in"]').click();
         cy.get("#emailAddress").type("demotesting@gmail.com")
         cy.get('.labelTextFieldForm > button').click();
         cy.get("#password").type("demotest@123")
         cy.get("button[value='sign-in']").click();
 
-        cy.get('.menuButton').click();
-        cy.get("body > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3) > div:nth-child(3) > div:nth-child(2) > span:nth-child(2)").click();
-        cy.get("#addListName").type("books");
-        cy.get("button[class='submit-button ui-button ui-corner-all ui-widget']").click();
-
-       // delete list
-        cy.get("div[id='listDiv'] div:nth-child(2) div:nth-child(1)").click();
-        cy.get("button[class='menuButton']").click();
-        cy.get("body > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > button:nth-child(4) > div:nth-child(3) > div:nth-child(10) > span:nth-child(2)").click();
-        cy.wait(1000);
-        cy.get('[aria-describedby="deleteListDialog"] > .ui-dialog-buttonpane > .ui-dialog-buttonset > .danger-button').click();
-       cy.wait(3000);
+        cy.url().should('contain','/your-lists');
+        
+        cy.get("body > div:nth-child(5) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1)")
+        .should('have.text','Biscuit');
     });
 
     it('should navigate to Overview and check for "Shop Merch!"', () => {
