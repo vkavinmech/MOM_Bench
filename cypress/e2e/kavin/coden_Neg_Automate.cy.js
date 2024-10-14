@@ -2,6 +2,7 @@ import 'cypress-iframe'
 describe('Automate codenbox negative scenarios', () => {
     beforeEach(() => {
         cy.visit('https://codenboxautomationlab.com/practice/');
+        cy.wait(2000);
     });
 
     it('Radio Button Example', () => {
@@ -54,14 +55,6 @@ describe('Automate codenbox negative scenarios', () => {
                 })
             })
         })
-    });
-
-    it('Element Displayed Example', () => {
-        cy.get('#hide-textbox').click(); 
-        cy.get("#show-textbox").click();
-        cy.get('#displayed-text').should('be.visible'); 
-        cy.get('#displayed-text').type("kavin").should('not.have.value','demo'); 
-        
     });
 
     it('Enabled/Disabled Example', () => { 

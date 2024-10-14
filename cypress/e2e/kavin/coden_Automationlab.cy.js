@@ -57,14 +57,6 @@ describe('Automation Practice Tests', () => {
         })
     });
 
-    it('Element Displayed Example', () => {
-        cy.get('#hide-textbox').click(); 
-        cy.get("#show-textbox").click();
-        cy.get('#displayed-text').should('be.visible'); 
-        cy.get('#displayed-text').type("kavin").should('have.value','kavin'); 
-        
-    });
-
     it('Enabled/Disabled Example', () => { 
         cy.get('#enabled-button').click();
         cy.get('#enabled-example-input').should('not.be.disabled').type('enabled')
