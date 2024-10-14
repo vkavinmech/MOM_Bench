@@ -60,7 +60,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.get("#billing_address_1").type(data.houseNo);
         cy.get("#billing_address_2").type(data.village);
         cy.get("#billing_city").type(data.city);
-        cy.get("#select2-billing_state-container").click();
+        cy.get("span[id='select2-billing_state-container']").click();
         cy.get("input[role='combobox']").type('Tamil Nadu').type('{enter}')
         cy.get("#billing_postcode").type(data.pincode);
         cy.get('#place_order').click();
@@ -90,7 +90,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.get("#billing_address_1").type(data.houseNo);
         cy.get("#billing_address_2").type(data.village);
         cy.get("#billing_city").type(data.city);
-        cy.get("#select2-billing_state-container").click();
+        cy.get("span[id='select2-billing_state-container']").click();
         cy.get("input[role='combobox']").type('Tamil Nadu').type('{enter}')
         cy.get("#billing_postcode").type(data.pincode);
         cy.get('#place_order').click();
@@ -123,7 +123,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.get("#billing_address_1").type(data.houseNo);
         cy.get("#billing_address_2").type(data.village);
         cy.get("#billing_city").type(data.city);
-        cy.get("#select2-billing_state-container").click();
+        cy.get("span[id='select2-billing_state-container']").click();
         cy.get("input[role='combobox']").type('Tamil Nadu').type('{enter}')
         cy.get("#billing_postcode").type(data.pincode);
         cy.get('#place_order').click();
