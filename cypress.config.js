@@ -12,6 +12,17 @@ module.exports = defineConfig({
             return xlsx.utils.sheet_to_json(ws, { raw: false });
           }
           on("task", {
+            parseXlsx({filePath}){
+              return new Promise((resolve,reject)=>{
+                try{
+                  const jsonData =xlsx.parse(fs.readFileSync(filePath))
+                  resolve(jsonData);
+                }catch(e){
+                  reject(e)
+                }
+                
+              })
+            },
             generateJSONFromExcel: generateJSONFromExcel,
           })
           return config;
