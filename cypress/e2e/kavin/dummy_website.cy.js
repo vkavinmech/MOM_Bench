@@ -9,7 +9,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.visit("https://www.dummyticket.com/dummy-ticket-for-visa-application/");
     });
 
-    it('should verify the home page', () => {
+    it('should verify home page', () => {
         cy.get("li[id='menu-item-13'] a[class=' nav-item-child ffb-ark-first-level-menu ']").click();
         cy.url().should('eq','https://www.dummyticket.com/')
         cy.get(".ffb-id-1bsvhj23.fg-heading.text-left.fg-text-light.fg-wow.fadeIn").should('contain','Dummy tickets for all occasions')
