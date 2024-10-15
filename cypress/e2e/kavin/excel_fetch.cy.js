@@ -1,4 +1,4 @@
-describe('Fetch Data from Excel', () => {
+describe('Fetch data from Excel', () => {
     it("should perform the datadriven fetch from excel for single data", () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/');
 
