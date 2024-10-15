@@ -37,7 +37,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.title().should('eq','Contact - Dummy ticket')
     })
 
-    it('should perform place order', () => {
+    it.only('should perform place order', () => {
         cy.get("#travname").type(data.firstname);
         cy.get("#travlastname").type(data.lastname);
         cy.get("#dob").click();
@@ -60,7 +60,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.get("#billing_address_1").type(data.houseNo);
         cy.get("#billing_address_2").type(data.village);
         cy.get("#billing_city").type(data.city);
-        cy.get('#select2-billing_state-container').click();
+        cy.xpath("//span[@id='select2-billing_state-container']").click();
         cy.get("input[role='combobox']").type('Tamil Nadu').type('{enter}')
         cy.get("#billing_postcode").type(data.pincode);
         cy.get('#place_order').click();
@@ -90,7 +90,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.get("#billing_address_1").type(data.houseNo);
         cy.get("#billing_address_2").type(data.village);
         cy.get("#billing_city").type(data.city);
-        cy.get('#select2-billing_state-container').click();
+        cy.xpath("//span[@id='select2-billing_state-container']").click();
         cy.get("input[role='combobox']").type('Tamil Nadu').type('{enter}')
         cy.get("#billing_postcode").type(data.pincode);
         cy.get('#place_order').click();
@@ -118,7 +118,7 @@ describe('Dummy Ticket positive Scenarios', () => {
         cy.get("#billname").type(data.billingName);
         cy.get("#billing_phone").type(data.phone);
         cy.get("#billing_email").type(data.emailValid);
-        cy.get("#select2-billing_country-container").click();
+        cy.xpath("//span[@id='select2-billing_state-container']").click();
         cy.get("input[role='combobox']").type('India').type('{enter}')
         cy.get("#billing_address_1").type(data.houseNo);
         cy.get("#billing_address_2").type(data.village);

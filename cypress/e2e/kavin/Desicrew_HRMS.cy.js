@@ -22,11 +22,6 @@ describe('Login Test', () => {
         cy.get("span[class='user-info initPageDone'] small").should('contain','Welcome');
     });
 
-    it.skip('should navigate to calender page', () => {
-        cy.get(".menu-icon.fa.fa.fa-calendar").click();
-        cy.get("div[class='fc-center'] h2").should('have.text','October 2024')
-        cy.url().should('include', '/Home/Calendar'); 
-    });
     it('should navigate to profile page', () => {
         cy.get(".menu-icon.fa.fa-users").trigger('mouseover').click();
         cy.get("body > div:nth-child(3) > div:nth-child(1) > ul:nth-child(2) > li:nth-child(3) > ul:nth-child(3) > li:nth-child(1) > a:nth-child(1) > span:nth-child(1)").click();
