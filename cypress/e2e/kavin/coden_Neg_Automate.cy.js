@@ -2,7 +2,7 @@ import 'cypress-iframe'
 describe('Automate codenbox negative scenarios', () => {
     beforeEach(() => {
         cy.visit('https://codenboxautomationlab.com/practice/');
-        cy.wait(2000);
+        cy.wait(5000);
     });
 
     it('Radio Button Example', () => {
@@ -12,6 +12,7 @@ describe('Automate codenbox negative scenarios', () => {
     });
 
     it('Dynamic Dropdown Example', () => {
+        cy.wait(2000);
         cy.get('#autocomplete').type('Italy').type('{enter}')
         cy.get('#autocomplete').should('not.have.value', 'India'); 
     });
