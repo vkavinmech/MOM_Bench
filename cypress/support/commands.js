@@ -29,6 +29,9 @@
 /// <reference types="cypress-xpath" />
 
 import 'cypress-file-upload';
+Cypress.Commands.add("parseXlsx",(inputFile)=>{
+    return cy.task('parseXlsx',{filePath:inputFile})
+})
 
 
 Cypress.Commands.add('getIframe',(iframe)=>{

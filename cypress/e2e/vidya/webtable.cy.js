@@ -1,4 +1,4 @@
-describe("Handle Tables", () => {
+describe("Handle Webtables", () => {
     beforeEach("Login", () => {
       cy.visit("https://demo.opencart.com/admin/index.php");
       // login

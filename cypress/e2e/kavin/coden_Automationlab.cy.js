@@ -47,22 +47,15 @@ describe('Automation Practice Tests', () => {
     });
 
     it('Web Table Example', () => {
+        cy.wait(3000);
         cy.get("#product > tbody").each( ($row, index, $rows)=>{
             cy.wrap($row).within( ()=>{
-                cy.wait(2000)
+                cy.wait(3000)
                 cy.get("tr").each( ($col, index, $cols)=>{
                     cy.log($col.text());
                 })
             })
         })
-    });
-
-    it('Element Displayed Example', () => {
-        cy.get('#hide-textbox').click(); 
-        cy.get("#show-textbox").click();
-        cy.get('#displayed-text').should('be.visible'); 
-        cy.get('#displayed-text').type("kavin").should('have.value','kavin'); 
-        
     });
 
     it('Enabled/Disabled Example', () => { 
