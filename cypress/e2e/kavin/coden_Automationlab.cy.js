@@ -46,18 +46,6 @@ describe('Automation Practice Tests', () => {
         })
     });
 
-    it('Web Table Example', () => {
-        cy.wait(3000);
-        cy.get("#product > tbody").each( ($row, index, $rows)=>{
-            cy.wrap($row).within( ()=>{
-                cy.wait(3000)
-                cy.get("tr").each( ($col, index, $cols)=>{
-                    cy.log($col.text());
-                })
-            })
-        })
-    });
-
     it('Enabled/Disabled Example', () => { 
         cy.get('#enabled-button').click();
         cy.get('#enabled-example-input').should('not.be.disabled').type('enabled')
