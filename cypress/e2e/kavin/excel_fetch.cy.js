@@ -22,7 +22,7 @@ describe('Fetch Data from Excel', () => {
     });    
 
 
-    it("should perform the datadriven fetch from excel for multiple data's", () => {
+    it("should perform the datadriven fetch from excel for multiple data", () => {
         const filePath = "C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\orange_excel.xlsx"; 
         const sheetName = 'login'; 
     
