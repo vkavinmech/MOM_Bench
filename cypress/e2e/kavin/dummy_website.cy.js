@@ -70,7 +70,7 @@ describe('Dummy Ticket positive Scenarios', () => {
     it('should perform payment using netbanking', () => {
         cy.get("#travname").type(data.firstname);
         cy.get("#travlastname").type(data.lastname);
-        cy.get("#dob").click();
+        cy.get("#dob").click()
         cy.get("select[aria-label='Select month']").select('Jul');
         cy.get("select[aria-label='Select year']").select('1996');
         cy.get("tbody tr:nth-child(3) td:nth-child(3) a:nth-child(1)").click();
