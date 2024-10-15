@@ -29,10 +29,19 @@
 /// <reference types="cypress-xpath" />
 
 import 'cypress-file-upload';
+
 Cypress.Commands.add("parseXlsx",(inputFile)=>{
     return cy.task('parseXlsx',{filePath:inputFile})
 })
 
+Cypress.Commands.add('readExcelRaw', (filePath, sheetName) => {
+    return cy.readFile(filePath, 'binary').then((data) => {
+      const workbook = XLSX.read(data, { type: 'binary' });
+      const sheet = workbook.Sheets[sheetName];
+      // Directly return the raw data as a 2D array
+      return XLSX.utils.sheet_to_json(sheet, { header: 1, raw: true });
+    });
+  });
 
 Cypress.Commands.add('getIframe',(iframe)=>{
     return cy.get(iframe)
