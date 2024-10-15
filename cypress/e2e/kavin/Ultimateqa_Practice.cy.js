@@ -7,6 +7,7 @@ describe('E-commerce Site Automation', () => {
     cy.get("input[type='password']").type('Abcd@9894');
     cy.get("button[type='submit']").click();
     cy.url().should('include', '/enrollments');
+    cy.wait(2000)
   });
   it.skip('should sign up a new user', () => {
     cy.get("a[href='/users/sign_in']").click();
