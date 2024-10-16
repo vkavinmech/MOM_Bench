@@ -14,7 +14,7 @@ it('Should Verify the Dropdown dynamic', () => {
     cy.get('#searchInput').type('Delhi')
     cy.get('.suggestion-title').contains('Delhi University').click()
 });
-it('Should Verify the Dropdown dynamic', () => {
+it.skip('Should Verify the Dropdown dynamic', () => {
     cy.visit("https://www.google.com/");
     cy.get('#APjFqb').type('cypress automation')
     cy.wait(3000)

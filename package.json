@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "papaparse": "^5.4.1",
+    "pg": "^8.13.0",
     "xlsx": "^0.18.5"
   }
 }

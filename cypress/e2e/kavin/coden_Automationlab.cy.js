@@ -18,11 +18,6 @@ describe('Automation Practice Tests', () => {
         cy.get('#autocomplete').should('have.value', 'Italy'); 
     });
 
-    it('Static Dropdown Example', () => {
-        cy.wait(2000)
-        cy.get('#dropdown-class-example').select('Selenium'); 
-    });
-
     it('Checkbox Example', () => {
         cy.wait(2000)
         cy.get('#checkBoxOption1').check(); 

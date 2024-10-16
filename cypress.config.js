@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
+const { Client } = require('pg');
 
 module.exports = defineConfig({
-
       e2e: { 
         setupNodeEvents(on, config) {
           const xlsx = require("xlsx");
@@ -20,8 +20,26 @@ module.exports = defineConfig({
                 }catch(e){
                   reject(e)
                 }
-                
               })
+            },
+            async queryDatabase(query) {
+              const client = new Client({
+                user: "postgres",
+                host: "localhost",
+                database: "postgres",
+                password: "root",
+                port: "5432"
+              });
+              await client.connect();
+              try {
+                const res = await client.query(query);
+                return res.rows; 
+              } catch (err) {
+                console.error(err);
+                throw err; 
+              } finally {
+                await client.end();
+              }
             },
             generateJSONFromExcel: generateJSONFromExcel,
           })
