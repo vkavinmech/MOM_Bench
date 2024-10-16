@@ -30,6 +30,9 @@
 
 import 'cypress-file-upload';
 
+import * as XLSX from 'xlsx';
+
+
 Cypress.Commands.add("parseXlsx",(inputFile)=>{
     return cy.task('parseXlsx',{filePath:inputFile})
 })
