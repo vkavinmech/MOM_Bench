@@ -1,11 +1,8 @@
 import 'cypress-iframe'
 describe('Automation Practice Tests', () => {
-    beforeEach(() => {
-        cy.visit('https://codenboxautomationlab.com/practice/');
-        cy.wait(3000)
-    });
 
     it('Radio Button Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get("input[value='radio1']").check(); 
         cy.get("input[value='radio2']").check(); 
@@ -13,12 +10,14 @@ describe('Automation Practice Tests', () => {
     });
 
     it('Dynamic Dropdown Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get('#autocomplete').type('Italy').type('{enter}')
         cy.get('#autocomplete').should('have.value', 'Italy'); 
     });
 
     it('Checkbox Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get('#checkBoxOption1').check(); 
         cy.get('#checkBoxOption1').should('be.checked'); 
@@ -27,6 +26,7 @@ describe('Automation Practice Tests', () => {
     });
     
     it('Switch Tab Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get('#opentab').invoke('removeAttr', 'target').click(); 
         cy.url().should('contain', '/@CodenboxAutomationLab'); 
@@ -34,6 +34,7 @@ describe('Automation Practice Tests', () => {
     });
 
     it('Switch To Alert Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get("#name").type("kavin");
         cy.get('#alertbtn').click(); 
@@ -48,6 +49,7 @@ describe('Automation Practice Tests', () => {
     });
 
     it('Enabled/Disabled Example', () => { 
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get('#enabled-button').click();
         cy.get('#enabled-example-input').should('not.be.disabled').type('enabled')
@@ -55,12 +57,14 @@ describe('Automation Practice Tests', () => {
     });
 
     it('Mouse Hover Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.get('.mouse-hover').trigger('mouseover')
         cy.get('.mouse-hover').should('be.visible'); 
     });
 
     it('iFrame Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.wait(2000)
         cy.frameLoaded('#courses-iframe')
         cy.iframe("#courses-iframe").find("#slider-4-slide-7-layer-1").invoke('removeAttr', 'target').click();
@@ -70,6 +74,7 @@ describe('Automation Practice Tests', () => {
     });
 
     it('Download File Example', () => {
+        cy.visit('https://codenboxautomationlab.com/practice/');
         cy.get('.wp-block-button__link.wp-element-button').click()
         .should('contain','Download Apk files')
     });
