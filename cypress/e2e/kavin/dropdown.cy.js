@@ -12,9 +12,9 @@ it('Should Verify the Dropdown to enter the text', () => {
 it('Should Verify the Dropdown dynamic', () => {
     cy.visit("https://www.wikipedia.org/");
     cy.get('#searchInput').type('Delhi')
-    cy.get('.suggestion-title').contains('Delhi University').click()
+    cy.get('.suggestion-title').contains('Delhi University').click({force: true});
 });
-it.skip('Should Verify the Dropdown dynamic', () => {
+it('Should Verify the Dropdown dynamic', () => {
     cy.visit("https://www.google.com/");
     cy.get('#APjFqb').type('cypress automation')
     cy.wait(3000)

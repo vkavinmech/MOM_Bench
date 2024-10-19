@@ -2,7 +2,7 @@ describe('Fetch Data from Excel', () => {
     it("should perform the datadriven fetch from excel for single data", () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/');
 
-        const filePath = "C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\fetchLogin.xlsx"; 
+        const filePath = "cypress\\fixtures\\logindetails.xlsx"; 
         const sheetName = 'login'; 
   
         cy.readExcelRaw(filePath, sheetName).then((data) => {
@@ -23,7 +23,7 @@ describe('Fetch Data from Excel', () => {
 
 
     it("should perform the datadriven fetch from excel for multiple data", () => {
-        const filePath = "C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\fetchOrangehrm.xlsx"; 
+        const filePath = "cypress\\fixtures\\orange_excel.xlsx"; 
         const sheetName = 'login'; 
     
         cy.readExcelRaw(filePath, sheetName).then((data) => {
@@ -57,8 +57,8 @@ describe('Fetch Data from Excel', () => {
     it("should perform the datadriven fetch from excel directly", () => {
         cy.visit("http://register.rediff.com/register/register.php?FormName=user_details");
 
-        const excelFilePath = "C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\fetchRediff.xlsx";
-        const sheetName = "details";
+        const excelFilePath = "cypress\\fixtures\\rediff_excel.xlsx";
+        const sheetName = "Details";
 
         cy.readExcelRaw(excelFilePath, sheetName).then((data) => {
             const headers = data[0]; // First row (header row)
@@ -93,8 +93,8 @@ describe('Fetch Data from Excel', () => {
         cy.visit("https://www.orangehrm.com/en/book-a-free-demo");
         cy.get("div[class='d-flex web-menu-btn'] li:nth-child(2) a:nth-child(1)").click(); 
 
-        const excelFilePath = "C:\\Users\\Dell\\Desktop\\MOM_Bench\\cypress\\fixtures\\fetchOrangehrm.xlsx";
-        const sheetName = "details";
+        const excelFilePath = "cypress\\fixtures\\orange_excel.xlsx";
+        const sheetName = "Details";
 
         cy.readExcelRaw(excelFilePath, sheetName).then((data) => {
             const headers = data[0]; // First row (header row)
