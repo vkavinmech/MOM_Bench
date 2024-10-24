@@ -4,6 +4,8 @@ const { Client } = require('pg');
 module.exports = defineConfig({
       e2e: { 
         setupNodeEvents(on, config) {
+
+          
           const xlsx = require("xlsx");
           
           function generateJSONFromExcel(agrs) {
@@ -45,6 +47,10 @@ module.exports = defineConfig({
           })
           return config;
         },
+        "baseUrl": "https://reqres.in/api/", 
+      "env": {
+        "search":"QA"
+      }
     },
   chromeWebSecurity: false, 
 });
