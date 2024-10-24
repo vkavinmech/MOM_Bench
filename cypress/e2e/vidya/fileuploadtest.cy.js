@@ -1,4 +1,4 @@
-describe("File upload test", () => {
+describe("File uploaded test", () => {
 
     before(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
