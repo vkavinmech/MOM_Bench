@@ -1,5 +1,5 @@
 
-describe('My First Test', () => {
+describe('My First Test suite', () => {
     it('Verify title - positive test', () => {
       cy.visit("https://opensource-demo.orangehrmlive.com/")
       cy.title().should('eq', 'OrangeHRM')
