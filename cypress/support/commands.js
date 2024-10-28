@@ -28,6 +28,8 @@
 
 /// <reference types="cypress-xpath" />
 
+import 'cypress-iframe'
+
 import 'cypress-file-upload';
 
 import * as XLSX from 'xlsx';
