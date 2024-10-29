@@ -38,7 +38,7 @@ describe("Mouse actions", () => {
         cy.iframe("#iframeResult").find("button[ondblclick='myFunction()']").trigger("dblclick")
         cy.iframe("#iframeResult").find("#field2").should("have.value", "Hello World!")
 
-        //method 2
+        //apporach 2
 
         cy.iframe("#iframeResult").find("button[ondblclick='myFunction()']").dblclick()
         cy.iframe("#iframeResult").find("#field2").should("have.value", "Hello World!")
