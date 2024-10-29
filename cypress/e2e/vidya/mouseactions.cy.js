@@ -45,7 +45,7 @@ describe("Mouse actions", () => {
                 
     })
 
-    it.only("Mouse actions: scrolling the page", () =>{
+    it("Mouse actions: scrolling the page", () =>{
 
         cy.visit("https://flagpedia.net/index")
         cy.get("a[href='/india']").scrollIntoView({duration: 2000})
@@ -55,5 +55,35 @@ describe("Mouse actions", () => {
         cy.get("a[href='/albania']").should("be.visible")
 
         cy.get("[class='footer']").scrollIntoView({duration:2000})
+    })
+
+    it("Mouse actions: focus", () =>{
+        cy.visit("https://vinothqaacademy.com/")
+
+        cy.get("a[href='https://vinothqaacademy.com/']").first().focus()
+        cy.get("a[href='https://vinothqaacademy.com/']").first().should("have.focus")
+    })
+
+    it("Mouse actions: click", () =>{
+        cy.visit("https://vinothqaacademy.com/")
+
+        cy.get(".header_main_menu_wrapper > .collapse > .header-menu > .menu-item-6372 > :nth-child(1)").trigger("mouseover")
+        cy.get(".menu-item-6373").first().trigger("mouseover", { force: true })
+        cy.get("a[href='https://vinothqaacademy.com/demo-site/']").then((el) => {
+            // Log to see if the element is hidden
+            console.log(el);
+          })
+          .first().click({ force: true });
+    })
+
+    it.only("Mouse actions: tabs", () =>{
+        cy.visit("https://vinothqaacademy.com/")
+
+        cy.get("a[href='https://vinothqaacademy.com/demo-site/']").first()
+        .invoke("removeAttr", "target")
+        .click({force:true})
+
+        cy.url().should("include", "/demo-site")
+        cy.contains("Demo Site").should("be.visible")
     })
 })
