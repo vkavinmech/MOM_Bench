@@ -1,9 +1,21 @@
 const { defineConfig } = require("cypress");
 const { Client } = require('pg');
 
+const { downloadFile } = require('cypress-downloadfile/lib/addPlugin');
+const xlsx = require('xlsx');
+const mysql = require('mysql2/promise');
+const sqlite3 = require('sqlite3').verbose();
+
 module.exports = defineConfig({
       e2e: { 
+
+        reporter: 'cypress-mochawesome-reporter',
+  projectId: "jqjvdf",
+  videosFolder: 'C:\\cypress\\cypress\\support\\Videos',
+  video: true,
         setupNodeEvents(on, config) {
+
+          require('cypress-mochawesome-reporter/plugin')(on);
 
           
           const xlsx = require("xlsx");
@@ -23,6 +35,21 @@ module.exports = defineConfig({
                   reject(e)
                 }
               })
+            },
+
+            async queryDb(query) {
+              const db = new sqlite3.Database('./mydb.sqlite');
+              return new Promise((resolve, reject) => {
+                db.all(query, [], (err, rows) => {
+                  if (err) {
+                    console.error(err);
+                    db.close();
+                    return reject(err);
+                  }
+                  db.close();
+                  return resolve(rows);
+                });
+              });
             },
 
             readExcel(filePath) {
