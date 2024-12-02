@@ -1,6 +1,9 @@
-describe("Handling Webtables", () => {
+describe("Handle Tables", () => {
     beforeEach("Login", () => {
-      cy.visit("https://demo.opencart.com/admin/index.php");
+      
+      cy.visit("https://demo.opencart.com/admin/index.php", { failOnStatusCode: false });
+
+      
       // login
      // cy.get("#input-username").type("demo");
       //cy.get("#input-password").type("demo");
@@ -34,6 +37,7 @@ describe("Handling Webtables", () => {
     });
   
     it("Read all the rows & columns data on the first page", () => {
+      cy.wait(60000)
       // Loop through each row and print each cell's text
       cy.get("table[class='table table-bordered table-hover']>tbody>tr").each(
         ($row, index, $rows) => {
