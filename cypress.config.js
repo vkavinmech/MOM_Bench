@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const addPlugin = require('cypress-downloadfile/lib/addPlugin');
 const { Client } = require('pg');
 
 module.exports = defineConfig({
