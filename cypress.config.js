@@ -2,9 +2,23 @@ const { defineConfig } = require("cypress");
 const addPlugin = require('cypress-downloadfile/lib/addPlugin');
 const { Client } = require('pg');
 
+const { downloadFile } = require('cypress-downloadfile/lib/addPlugin');
+const xlsx = require('xlsx');
+const mysql = require('mysql2/promise');
+const sqlite3 = require('sqlite3').verbose();
+
 module.exports = defineConfig({
       e2e: { 
+
+        reporter: 'cypress-mochawesome-reporter',
+  projectId: "jqjvdf",
+  videosFolder: 'C:\\cypress\\cypress\\support\\Videos',
+  video: true,
         setupNodeEvents(on, config) {
+
+          require('cypress-mochawesome-reporter/plugin')(on);
+
+          
           const xlsx = require("xlsx");
           
           function generateJSONFromExcel(agrs) {
@@ -22,6 +36,28 @@ module.exports = defineConfig({
                   reject(e)
                 }
               })
+            },
+
+            async queryDb(query) {
+              const db = new sqlite3.Database('./mydb.sqlite');
+              return new Promise((resolve, reject) => {
+                db.all(query, [], (err, rows) => {
+                  if (err) {
+                    console.error(err);
+                    db.close();
+                    return reject(err);
+                  }
+                  db.close();
+                  return resolve(rows);
+                });
+              });
+            },
+
+            readExcel(filePath) {
+              const workbook = xlsx.readFile(filePath);
+              const sheetName = workbook.SheetNames[0];
+              const data = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]);
+              return data;
             },
             async queryDatabase(query) {
               const client = new Client({
@@ -46,6 +82,11 @@ module.exports = defineConfig({
           })
           return config;
         },
+        "baseUrl": "https://reqres.in/api/", 
+      "env": {
+        "search":"QA"
+      }
     },
   chromeWebSecurity: false, 
 });
+
