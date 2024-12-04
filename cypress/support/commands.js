@@ -28,24 +28,7 @@
 
 /// <reference types="cypress-xpath" />
 
-import 'cypress-iframe'
-
-import 'cypress-file-upload';
-
 import * as XLSX from 'xlsx';
-
-
-Cypress.Commands.add("parseXlsx",(inputFile)=>{
-    return cy.task('parseXlsx',{filePath:inputFile})
-})
-
-Cypress.Commands.add('readExcelRaw', (filePath, sheetName) => {
-    return cy.readFile(filePath, 'binary').then((data) => {
-      const workbook = XLSX.read(data, { type: 'binary' });
-      const sheet = workbook.Sheets[sheetName];
-      return XLSX.utils.sheet_to_json(sheet, { header: 1, raw: true });
-    });
-  });
 
 Cypress.Commands.add('getIframe',(iframe)=>{
     return cy.get(iframe)
@@ -54,22 +37,33 @@ Cypress.Commands.add('getIframe',(iframe)=>{
     .then(cy.wrap);
 })
 
+Cypress.Commands.add('readExcelRaw', (filePath, sheetName) => {
+  return cy.readFile(filePath, 'binary').then((data) => {
+    const workbook = XLSX.read(data, { type: 'binary' });
+    const sheet = workbook.Sheets[sheetName];
+    return XLSX.utils.sheet_to_json(sheet, { header: 1, raw: true });
+  });
+});
+
+Cypress.Commands.add('readExcelRaw', (filePath, sheetName) => {
+    return cy.readFile(filePath, 'binary').then((data) => {
+      const workbook = XLSX.read(data, { type: 'binary' });
+      const sheet = workbook.Sheets[sheetName];
+      // Directly return the raw data as a 2D array
+      return XLSX.utils.sheet_to_json(sheet, { header: 1, raw: true });
+    });
+  });
+
 // custom command for clicking link using lable(lable means text present in html )
 
 Cypress.Commands.add('clickLink',(label)=> {
     cy.get("a").contains(label).click();
 })
 
+//custom command for login
+
 Cypress.Commands.add('loginapp',(email,password)=> {
     cy.get(":nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input").type(email);
     cy.get(":nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-input").type(password);
     cy.get(".oxd-button").click();
 })
-
-
-Cypress.Commands.add('login', (username, password) => { 
-    cy.visit("http://the-internet.herokuapp.com/login")
-    cy.get("input[name='username']").type(username)
-    cy.get("input[name='password']").type(password)
-    cy.get("button[type='submit']").click()
- })
