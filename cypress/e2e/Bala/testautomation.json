@@ -1,0 +1,24 @@
+[
+    {
+        "Username": "student",
+        "Password": "Password123",
+        "expected":"Logged In Successfully",
+        "expectedcontact":"Contact",
+        "firstname":"bala",
+        "lastname":"aadhikesavan",
+        "email":"bala02aadhi@gmail.com",
+        "comment":"no comment to say"
+    },
+    
+    {
+        "Username": "xyz",
+        "Password": "Password123",
+        "expectedusernameeroor":"Your username is invalid!"
+    },
+    
+    {
+        "Username": "student",
+        "Password": "xyz",
+        "expectedpassworderror":"Your password is invalid!"
+    }
+]
