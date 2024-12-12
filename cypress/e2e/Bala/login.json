@@ -1,0 +1,12 @@
+{
+    "firstname":"tae",
+    "lastname":"huyng",
+    "email":"bala02aadhi@gmail.com",
+    "telephone":"8124988775",
+    "expected":"My Account Information",
+    "expectedalert":" Success: Your account has been successfully updated.",
+    "passwordresult":"Change Password",
+    "newpassword":"bala098",
+    "newconfirmpassword":"bala098",
+    "passwordalert":" Success: Your password has been successfully updated."
+}
