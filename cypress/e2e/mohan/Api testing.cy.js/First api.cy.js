@@ -11,7 +11,7 @@ describe("Api testing",()=>{
             "name": "morpheus",
             "job": "leader"
           }
-        cy.request("Post","https://reqres.in/api/users").then((code1)=>{
+        cy.request("Post","https://reqres.in/api/users",value).then((code1)=>{
             expect(code1.status).to.equal(201);
             expect(value.name).to.equal("morpheus");
             expect(value.job).to.equal("leader"); })
@@ -21,20 +21,20 @@ describe("Api testing",()=>{
              "name": "Mohan",
              "job": "QA"
   }
-   cy.request("Put","https://reqres.in/api/users/2?id=764").then((code2)=>{
+   cy.request("Put","https://reqres.in/api/users/2?id=764",value1).then((code2)=>{
             expect(code2.status).to.equal(200);
             expect(value1.name).to.equal("Mohan");
             expect(value1.job).eq("QA");
         })
 })
 it("Api for partial updating resources",()=>{
-    const value1={
+    const value2={
          "name": "RajMohan",
          
 }
-cy.request("Put","https://reqres.in/api/users/2?id=764").then((code2)=>{
+cy.request("Put","https://reqres.in/api/users/2?id=764",value2).then((code2)=>{
         expect(code2.status).to.equal(200);
-        expect(value1.name).to.equal("RajMohan");
+        expect(value2.name).to.equal("RajMohan");
         
     })
 })
