@@ -1,0 +1,84 @@
+[
+    {
+        "username1":"Admin",
+         "password1":"admin123",
+         "expected1":"Dashboard"
+    },
+    {
+        "username2":"xyz",
+        "password2":"admin123",
+        "expected2":"Invalid credentials"
+    },
+    {
+        
+        "username3":"Admin",
+        "password3":"xyz",
+        "expected3":"Invalid credentials"
+    },
+    {
+        "Usernametest": "student",
+        "Passwordtest": "Password123",
+        "expectedtest":"Logged In Successfully",
+        "expectedcontacttest":"Contact",
+        "firstnametest":"bala",
+        "lastnametest":"aadhikesavan",
+        "emailtest":"bala02aadhi@gmail.com",
+        "commenttest":"no comment to say"
+    },
+    
+    {
+        "Usernameautomation1": "xyz",
+        "Passwordautomation1": "Password123",
+        "expectedusernameeroorautomation1":"Your username is invalid!"
+    },
+    
+    {
+        "Usernameautomation2": "student",
+        "Passwordautomation2": "xyz",
+        "expectedpassworderrorautomation3":"Your password is invalid!"
+    },
+    {
+        "firstnamelambda":"bala",
+        "lastnamelambda":"aadhikesavan",
+        "emaillambda":"bala02aagikesavan@gmail.com",
+        "telephonelambda":"9150794431",
+        "passwordlambda":"bala123",
+        "confirmpasswordlambda":"bala123",
+        "expectedresultlambda":"Your Account Has Been Created!"
+    
+    
+    },
+    {
+        "expectedorangehrmleave":"Leave",
+        "fromdateorangehrmleave":"2024-12-12",
+        "todateorangehrmleave":"2024-15-12",
+        
+        "employeenameorangehrm":"bala kumar ravi"
+      
+    
+    },
+    {
+        "firstnameadressbook":"jungkook",
+        "lastnameadressbook":"jimin",
+        "companyadressbook":"desicrew",
+        "adress1adressbook":"annanagar thirukatchur",
+        "adress2adressbook":"bahrathi stree sp kovil",
+        "cityadressbook":"chennai",
+        "postcodeadressbook":"567890",
+        "bookresultadressbook":"Address Book Entries"
+        
+    },
+    {
+        "firstnamechanges":"tae",
+        "lastnamechanges":"huyng",
+        "emailchanges":"bala02aadhi@gmail.com",
+        "telephonechanges":"8124988775",
+        "expectedchanges":"My Account Information",
+        "expectedalertchanges":" Success: Your account has been successfully updated.",
+        "passwordresultchanges":"Change Password",
+        "newpasswordchanges":"bala098",
+        "newconfirmpasswordchanges":"bala098",
+        "passwordalertchanges":" Success: Your password has been successfully updated."
+    }
+    
+]
