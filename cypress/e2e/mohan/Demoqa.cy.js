@@ -57,7 +57,7 @@ it("File upload",()=>{
     cy.visit("https://demo.automationtesting.in/FileUpload.html");
     cy.get("#input-4").attachFile("rediff.json");
 })
-it('download plugin to download a file', () => {
+it('File Download', () => {
         
     let pdfUrl = 'https://demo.automationtesting.in/FileDownload.html';
     let destinationFolder = 'cypress/downloads';
