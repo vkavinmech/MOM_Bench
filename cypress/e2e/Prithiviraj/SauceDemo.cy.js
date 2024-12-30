@@ -1,10 +1,10 @@
-describe('Sauce Demo ', () => {
+describe('Sauce Demo Automation', function() {
    
     it('navigate to saucedemo website',()=>{
-        cy.visit('https://www.saucedemo.com')
-        cy.get('input[data-test="username"]').type('standard_user');
-        cy.get('input[data-test="password"]').type('secret_sauce');
-        cy.get('input[data-test="login-button"]').click();
+        cy.visit("https://www.saucedemo.com/")
+        cy.get("//input[@id='user-name']").type("standard_user");
+        cy.get("#password").type("secret_sauce");
+        cy.get("//input[@id='login-button']").click();
         cy.url().should('include', '/inventory.html');
         })
 
