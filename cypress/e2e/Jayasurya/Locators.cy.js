@@ -4,9 +4,16 @@ describe('My First Test', () => {
         cy.visit("https://login.salesforce.com/")
         cy.title().should('eq','Login | Salesforce')
     })
-    it('Negative test', () => {
+
+    it('CSS Locators', () => {
 
         cy.visit("https://login.salesforce.com/")
-        cy.title().should('eq','Salesforce1')
+        cy.get("#username").type('jayasurya-ayqg@force.com')
+    })
+
+    it('Xpath', () => {
+
+        cy.visit("https://login.salesforce.com/")
+        cy.xpath("//input[@id='password']").type('password')
     })
   })
