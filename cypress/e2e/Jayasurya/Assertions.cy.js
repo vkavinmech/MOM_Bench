@@ -57,11 +57,9 @@ cy.get(".oxd-userdropdown-name").then((x)=>{
 
     //BDD Style
     expect(actName).to.equal(expName)
-    expect(actName).to.not.equal(expName)
 
     //TDD Style
     assert.equal(actName,expName)
-    assert.notEqual(actName,expName)
     
 })
 
