@@ -34,20 +34,20 @@ describe('Handle Tables', () => {
 
     })})
     
-    it.only('Pagination In Table', () => {
+    it('Pagination In Table', () => {
         let TotalPages;
         cy.get(".col-sm-6.text-end").then((e)=>{
             let mytext=e.text();
             TotalPages = mytext.substring(mytext.indexOf("(")+1, mytext.indexOf("Pages")-1);
             cy.log("Total number of pages in table==>" + TotalPages)
 
-        let totalpages=6;
-        for(let p=1;p<=totalpages;p++)
+        let pages=5;
+        for(let p=1;p<=pages;p++)
         {
-            if(totalpages>1)
+            if(pages>1)
                 {
                 cy.log("Current page number=>"+p);
-                cy.get("ul[class='pagination']>li:nth-child("+p+")").click();
+                cy.get("ul[class='pagination']>li").contains(p.toString()).click();
                 cy.wait(3000)
                 }
         }
